@@ -1,0 +1,20 @@
+import kagglehub
+# Download the dataset using the Kaggle API via kagglehub
+dataset_name = "anandshaw2001/netflix-movies-and-tv-shows"
+path = kagglehub.dataset_download(dataset_name)
+
+# Print the path where the dataset files are saved
+print("Path to dataset files:", path)
+
+# Now you can use the path to load the dataset (for example, into a pandas DataFrame)
+import pandas as pd
+
+# Assuming the dataset contains a CSV file (you can adjust filename as needed)
+csv_file_path = f"{path}/netflix_titles.csv"  # Adjust based on actual file name
+df = pd.read_csv(csv_file_path)
+
+# Display the first few rows of the dataset
+print(df.head())
+
+
+
